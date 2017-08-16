@@ -195,14 +195,35 @@
             <md-icon>info</md-icon>
           </md-button>
         </md-list-item>
+
+        <md-list-item>
+          <md-avatar md-theme="orange" class="md-avatar-icon md-primary">
+            <md-icon>collections</md-icon>
+          </md-avatar>
+
+          <div class="md-list-text-container">
+            <span>Weekend Pictures</span>
+            <p>Jan 10, 2014</p>
+          </div>
+
+          <md-button class="md-icon-button md-list-action">
+            <md-icon>info</md-icon>
+          </md-button>
+        </md-list-item>
       </md-list>
     </main>
+
+    <md-bottom-bar>
+      <md-bottom-bar-item md-icon="history">Recents</md-bottom-bar-item>
+      <md-bottom-bar-item md-icon="favorite" md-active>Favorites</md-bottom-bar-item>
+      <md-bottom-bar-item md-icon="near_me">Nearby</md-bottom-bar-item>
+    </md-bottom-bar>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Test',
+  name: 'Template',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -212,15 +233,10 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-html,
-body,
-.app-viewport {
+<style lang="less" scoped>
+html, body, .app-viewport {
   height: 100%;
   overflow: hidden;
-}
-
-.app-viewport {
   display: flex;
   flex-flow: column;
 }
@@ -236,9 +252,10 @@ body,
   bottom: -20px;
   left: 16px;
   z-index: 10;
-}
-.md-fab .md-icon {
-  color: #fff;
+
+  .md-icon {
+    color: #fff;
+  }
 }
 
 .md-title {
@@ -267,7 +284,13 @@ body,
 .md-account-header .md-list-item:hover .md-button:hover {
   background-color: inherit;
 }
+
 .md-account-header .md-avatar-list .md-list-item-container:hover {
   background: none !important;
+}
+
+.md-bottom-bar {
+  bottom: 0;
+  z-index: 999;
 }
 </style>

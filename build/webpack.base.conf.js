@@ -47,6 +47,10 @@ module.exports = {
         include: [resolve('src'), resolve('test')]
       },
       {
+        test: /\.less$/,
+        loaders: ["style", "css", "less"]
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {

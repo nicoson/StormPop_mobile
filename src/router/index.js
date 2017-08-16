@@ -1,21 +1,38 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Test from '@/components/Test'
+
+//  import page components
+import Loading from '@/views/Login/Loading'
+import Mainboard from '@/views/Shop/Mainboard'
+import Template from '@/views/Template/template'
+
+//  import page jump Animation
+import vueg from 'vueg'
+import vuegOption from '@/common/vuegConfig'
+import 'vueg/css/transition-min.css'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Loading',
+      component: Loading
     },
     {
-      path: '/test',
-      name: 'Test',
-      component: Test
+      path: '/shop',
+      name: 'Mainboard',
+      component: Mainboard
+    },
+    {
+      path: '/template',
+      name: 'Template',
+      component: Template
     }
   ]
 })
+
+Vue.use(vueg, router, vuegOption)
+
+export default router

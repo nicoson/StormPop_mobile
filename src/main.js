@@ -8,6 +8,7 @@ import '../node_modules/vue-material/dist/vue-material.css'
 
 Vue.config.productionTip = false
 
+//  use Material UI
 Vue.use(VueMaterial)
 Vue.material.registerTheme({
   default: {

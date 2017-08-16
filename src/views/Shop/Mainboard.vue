@@ -1,5 +1,6 @@
 <template>
-  <div class="app-viewport" id="file-list">
+  <div class="app-viewport" id="app_main">
+
     <md-sidenav class="md-left md-fixed" ref="sidebar">
       <md-toolbar class="md-account-header">
         <md-list class="md-transparent">
@@ -21,8 +22,8 @@
     
           <md-list-item>
             <div class="md-list-text-container">
-              <span>John Doe</span>
-              <span>johndoe@email.com</span>
+              <span>{{username}}</span>
+              <span>{{useraccount}}</span>
             </div>
     
             <md-button class="md-icon-button md-list-action">
@@ -34,11 +35,11 @@
     
       <md-list>
         <md-list-item @click="$refs.sidebar.toggle()" class="md-primary">
-          <md-icon>insert_drive_file</md-icon> <span>My files</span>
+          <md-icon>insert_drive_file</md-icon> <span>My Profile</span>
         </md-list-item>
     
         <md-list-item @click="$refs.sidebar.toggle()">
-          <md-icon>people</md-icon> <span>Shared with me</span>
+          <md-icon>people</md-icon> <span>My Orders</span>
         </md-list-item>
     
         <md-list-item @click="$refs.sidebar.toggle()">
@@ -46,11 +47,11 @@
         </md-list-item>
     
         <md-list-item @click="$refs.sidebar.toggle()">
-          <md-icon>start</md-icon> <span>Starred</span>
+          <md-icon>start</md-icon> <span>Favour</span>
         </md-list-item>
     
         <md-list-item @click="$refs.sidebar.toggle()">
-          <md-icon>delete</md-icon> <span>Trash</span>
+          <md-icon>sms</md-icon> <span>Message</span>
         </md-list-item>
       </md-list>
     </md-sidenav>
@@ -223,25 +224,22 @@
 
 <script>
 export default {
-  name: 'Test',
+  name: 'Mainboard',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      username: 'John Doe',
+      useraccount: 'johndoe@email.com'
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-html,
-body,
-.app-viewport {
+<style lang="less" scoped>
+html, body, .app-viewport {
   height: 100%;
   overflow: hidden;
-}
-
-.app-viewport {
   display: flex;
   flex-flow: column;
 }
@@ -257,9 +255,10 @@ body,
   bottom: -20px;
   left: 16px;
   z-index: 10;
-}
-.md-fab .md-icon {
-  color: #fff;
+
+  .md-icon {
+    color: #fff;
+  }
 }
 
 .md-title {
@@ -288,12 +287,11 @@ body,
 .md-account-header .md-list-item:hover .md-button:hover {
   background-color: inherit;
 }
+
 .md-account-header .md-avatar-list .md-list-item-container:hover {
   background: none !important;
 }
+
 .md-bottom-bar {
-  position: fixed;
-  bottom: 0;
-  z-index: 999;
 }
 </style>
