@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 import {checkLogin} from '@/api/login'
 
 export default {
@@ -15,9 +16,13 @@ export default {
     // })
     this.getUserInfo()
   },
+  computed: {
+    ...mapGetters(['userInfo'])
+  },
   methods: {
     async getUserInfo () {
-      return console.log(await checkLogin())
+      let data = await checkLogin()
+      this.$store.commit('update_userInfo', data)
     }
   }
 }

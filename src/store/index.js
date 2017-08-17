@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 // import * as actions from './actions'
 import * as getters from './getters'
-// import { state, mutations } from './mutations'
+import { state, mutations } from './mutations'
 // import sidebar from './modules/sidebar'
 // import warn from './modules/warn'
 // import message from './modules/message'
@@ -16,8 +16,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   // actions,
   getters,
-  // state,
-  // mutations,
+  state,
+  mutations,
   modules: {
     // sidebar,
     // warn,
