@@ -6,14 +6,9 @@ import Loading from '@/views/Login/Loading'
 import Mainboard from '@/views/Shop/Mainboard'
 import Template from '@/views/Template/template'
 
-//  import page jump Animation
-import vueg from 'vueg'
-import vuegOption from '@/common/vuegConfig'
-import 'vueg/css/transition-min.css'
-
 Vue.use(Router)
 
-let router = new Router({
+export default new Router({
   routes: [
     {
       path: '/',
@@ -32,7 +27,3 @@ let router = new Router({
     }
   ]
 })
-
-Vue.use(vueg, router, vuegOption)
-
-export default router

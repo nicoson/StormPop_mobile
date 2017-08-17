@@ -5,8 +5,21 @@
 </template>
 
 <script>
+import {checkLogin} from '@/api/login'
+
 export default {
-  name: 'app'
+  name: 'app',
+  created () {
+    // axios.get('http://localhost:3000/testapi').then(function (data) {
+    //   console.log(data)
+    // })
+    this.getUserInfo()
+  },
+  methods: {
+    async getUserInfo () {
+      return console.log(await checkLogin())
+    }
+  }
 }
 </script>
 
