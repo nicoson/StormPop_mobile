@@ -1,3 +1,4 @@
+var userInfo = require('../model/userInfo');
 var express = require('express');
 var router = express.Router();
 
@@ -7,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/testapi', function(req, res, next) {
-  res.send({ title: 'Express' });
+  res.send(userInfo.get());
 });
 
 module.exports = router;

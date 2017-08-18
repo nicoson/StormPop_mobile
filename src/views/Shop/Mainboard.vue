@@ -1,7 +1,7 @@
 <template>
   <div class="app-viewport" id="app_main">
 
-    <md-sidenav class="md-left md-fixed" ref="sidebar">
+    <md-sidenav class="md-left" ref="sidebar">
       <md-toolbar class="md-account-header">
         <md-list class="md-transparent">
           <md-list-item class="md-avatar-list">
@@ -56,7 +56,8 @@
       </md-list>
     </md-sidenav>
     
-    <md-whiteframe md-elevation="3" class="main-toolbar">
+    <!-- tran -->
+<!--     <md-whiteframe md-elevation="3" class="main-toolbar">
       <md-toolbar class="md-large">
         <div class="md-toolbar-container">
           <md-button class="md-icon-button" @click="$refs.sidebar.toggle()">
@@ -76,146 +77,65 @@
     
         <div class="md-toolbar-container">
           <h2 class="md-title">My Files</h2>
+        </div>
     
-          <md-button class="md-fab md-mini">
-            <md-icon>add</md-icon>
-          </md-button>
+        <div class="md-toolbar-container">
+          <h2 class="md-title">My Files</h2>
         </div>
       </md-toolbar>
-    </md-whiteframe>
+    </md-whiteframe> -->
     
     <main class="main-content">
-      <md-list class="md-double-line">
-        <md-subheader class="md-inset">Folders</md-subheader>
+      <md-card md-with-hover>
+        <md-card-media>
+          <img src="assets/Jumbotron.jpg" alt="Jumbotron">
+        </md-card-media>
+      </md-card>
 
-        <md-list-item>
-          <md-avatar class="md-avatar-icon">
-            <md-icon>folder</md-icon>
-          </md-avatar>
+      <md-card md-with-hover class="app-prod-card">
+        <md-card-media>
+          <img src="" alt="People">
+        </md-card-media>
 
-          <div class="md-list-text-container">
-            <span>Photos</span>
-            <p>Jan 9, 2014</p>
-          </div>
+        <md-card-header>
+          <div class="md-title">Title goes here</div>
+          <div class="md-subhead">Subtitle here</div>
+        </md-card-header>
 
-          <md-button class="md-icon-button md-list-action">
-            <md-icon>info</md-icon>
-          </md-button>
-        </md-list-item>
+        <md-card-actions>
+          <md-button>Action</md-button>
+          <md-button>Action</md-button>
+        </md-card-actions>
 
-        <md-list-item>
-          <md-avatar class="md-avatar-icon">
-            <md-icon>folder</md-icon>
-          </md-avatar>
+        <md-card-content>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
+        </md-card-content>
+      </md-card>
 
-          <div class="md-list-text-container">
-            <span>Recipes</span>
-            <p>Jan 17, 2014</p>
-          </div>
+      <md-card md-with-hover class="app-prod-card">
+        <md-card-media>
+          <img src="assets/card-image-1.jpg" alt="People">
+        </md-card-media>
 
-          <md-button class="md-icon-button md-list-action">
-            <md-icon>info</md-icon>
-          </md-button>
-        </md-list-item>
+        <md-card-header>
+          <div class="md-title">Title goes here</div>
+          <div class="md-subhead">Subtitle here</div>
+        </md-card-header>
 
-        <md-list-item>
-          <md-avatar class="md-avatar-icon">
-            <md-icon>folder</md-icon>
-          </md-avatar>
+        <md-card-actions>
+          <md-button>Action</md-button>
+          <md-button>Action</md-button>
+        </md-card-actions>
 
-          <div class="md-list-text-container">
-            <span>Work</span>
-            <p>Jan 28, 2014</p>
-          </div>
+        <md-card-content>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
+        </md-card-content>
+      </md-card>
 
-          <md-button class="md-icon-button md-list-action">
-            <md-icon>info</md-icon>
-          </md-button>
-
-          <md-divider class="md-inset"></md-divider>
-        </md-list-item>
-
-        <md-subheader class="md-inset">Files</md-subheader>
-
-        <md-list-item>
-          <md-avatar class="md-avatar-icon md-primary">
-            <md-icon>insert_drive_file</md-icon>
-          </md-avatar>
-
-          <div class="md-list-text-container">
-            <span>Vacation Itinerary</span>
-            <p>Jan 20, 2014</p>
-          </div>
-
-          <md-button class="md-icon-button md-list-action">
-            <md-icon>info</md-icon>
-          </md-button>
-        </md-list-item>
-
-        <md-list-item>
-          <md-avatar md-theme="orange" class="md-avatar-icon md-primary">
-            <md-icon>collections</md-icon>
-          </md-avatar>
-
-          <div class="md-list-text-container">
-            <span>Kitchen Remodel</span>
-            <p>Jan 10, 2014</p>
-          </div>
-
-          <md-button class="md-icon-button md-list-action">
-            <md-icon>info</md-icon>
-          </md-button>
-        </md-list-item>
-
-        <md-list-item>
-          <md-avatar md-theme="green" class="md-avatar-icon md-primary">
-            <md-icon>view_list</md-icon>
-          </md-avatar>
-
-          <div class="md-list-text-container">
-            <span>Grocery Shop</span>
-            <p>Jan 10, 2014</p>
-          </div>
-
-          <md-button class="md-icon-button md-list-action">
-            <md-icon>info</md-icon>
-          </md-button>
-        </md-list-item>
-
-        <md-list-item>
-          <md-avatar md-theme="orange" class="md-avatar-icon md-primary">
-            <md-icon>collections</md-icon>
-          </md-avatar>
-
-          <div class="md-list-text-container">
-            <span>Weekend Pictures</span>
-            <p>Jan 10, 2014</p>
-          </div>
-
-          <md-button class="md-icon-button md-list-action">
-            <md-icon>info</md-icon>
-          </md-button>
-        </md-list-item>
-
-        <md-list-item>
-          <md-avatar md-theme="orange" class="md-avatar-icon md-primary">
-            <md-icon>collections</md-icon>
-          </md-avatar>
-
-          <div class="md-list-text-container">
-            <span>Weekend Pictures</span>
-            <p>Jan 10, 2014</p>
-          </div>
-
-          <md-button class="md-icon-button md-list-action">
-            <md-icon>info</md-icon>
-          </md-button>
-        </md-list-item>
-      </md-list>
     </main>
 
     <md-bottom-bar>
-      <md-bottom-bar-item md-icon="history">Recents</md-bottom-bar-item>
+      <md-bottom-bar-item md-icon="account_box" @click="$refs.sidebar.toggle()">Login</md-bottom-bar-item>
       <md-bottom-bar-item md-icon="favorite" md-active>Favorites</md-bottom-bar-item>
       <md-bottom-bar-item md-icon="near_me">Nearby</md-bottom-bar-item>
     </md-bottom-bar>
@@ -249,18 +169,6 @@ html, body, .app-viewport {
   z-index: 10;
 }
 
-.md-fab {
-  margin: 0;
-  position: absolute;
-  bottom: -20px;
-  left: 16px;
-  z-index: 10;
-
-  .md-icon {
-    color: #fff;
-  }
-}
-
 .md-title {
   padding-left: 8px;
   color: #fff;
@@ -270,6 +178,10 @@ html, body, .app-viewport {
   position: relative;
   z-index: 1;
   overflow: auto;
+
+  .app-prod-card {
+    margin: 15px;
+  }
 }
 
 .md-list-action .md-icon {
@@ -293,5 +205,6 @@ html, body, .app-viewport {
 }
 
 .md-bottom-bar {
+  height: 70px;
 }
 </style>
