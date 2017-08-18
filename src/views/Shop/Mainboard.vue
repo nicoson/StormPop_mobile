@@ -1,6 +1,7 @@
 <template>
   <div class="app-viewport" id="app_main">
-
+  
+    <!-- Slider Menu -->
     <md-sidenav class="md-left" ref="sidebar">
       <md-toolbar class="md-account-header">
         <md-list class="md-transparent">
@@ -56,81 +57,17 @@
       </md-list>
     </md-sidenav>
     
-    <!-- tran -->
-<!--     <md-whiteframe md-elevation="3" class="main-toolbar">
-      <md-toolbar class="md-large">
-        <div class="md-toolbar-container">
-          <md-button class="md-icon-button" @click="$refs.sidebar.toggle()">
-            <md-icon>menu</md-icon>
-          </md-button>
-    
-          <span style="flex: 1"></span>
-    
-          <md-button class="md-icon-button">
-            <md-icon>search</md-icon>
-          </md-button>
-    
-          <md-button class="md-icon-button">
-            <md-icon>view_module</md-icon>
-          </md-button>
-        </div>
-    
-        <div class="md-toolbar-container">
-          <h2 class="md-title">My Files</h2>
-        </div>
-    
-        <div class="md-toolbar-container">
-          <h2 class="md-title">My Files</h2>
-        </div>
-      </md-toolbar>
-    </md-whiteframe> -->
-    
+    <!-- Main board -->
     <main class="main-content">
+      <!-- AD slot -->
       <md-card md-with-hover>
         <md-card-media>
-          <img src="assets/Jumbotron.jpg" alt="Jumbotron">
+          <img src="../../assets/imgs/Jumbotron.jpg" alt="Jumbotron">
         </md-card-media>
       </md-card>
-
-      <md-card md-with-hover class="app-prod-card">
-        <md-card-media>
-          <img src="" alt="People">
-        </md-card-media>
-
-        <md-card-header>
-          <div class="md-title">Title goes here</div>
-          <div class="md-subhead">Subtitle here</div>
-        </md-card-header>
-
-        <md-card-actions>
-          <md-button>Action</md-button>
-          <md-button>Action</md-button>
-        </md-card-actions>
-
-        <md-card-content>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
-        </md-card-content>
-      </md-card>
-
-      <md-card md-with-hover class="app-prod-card">
-        <md-card-media>
-          <img src="assets/card-image-1.jpg" alt="People">
-        </md-card-media>
-
-        <md-card-header>
-          <div class="md-title">Title goes here</div>
-          <div class="md-subhead">Subtitle here</div>
-        </md-card-header>
-
-        <md-card-actions>
-          <md-button>Action</md-button>
-          <md-button>Action</md-button>
-        </md-card-actions>
-
-        <md-card-content>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
-        </md-card-content>
-      </md-card>
+      
+      <!-- Products list -->
+      <CardAction v-for="{prod, index} in prods" :cardinfo="prod" :key="index"></CardAction>
 
     </main>
 
@@ -143,14 +80,32 @@
 </template>
 
 <script>
+import CardAction from '@/components/Card_Action'
 export default {
   name: 'Mainboard',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
       username: 'John Doe',
-      useraccount: 'johndoe@email.com'
+      useraccount: 'johndoe@email.com',
+      prods: [{
+        name: '旋风爆米花',
+        options: [...'abc'],
+        url: '../../assets/imgs/Jumbotron.jpg'
+      }, {
+        name: '劲爽饮料',
+        options: [...'abc'],
+        url: '../../assets/imgs/Jumbotron.jpg'
+
+      }, {
+        name: '火爆小食',
+        options: [...'abc'],
+        url: '../../assets/imgs/Jumbotron.jpg'
+      }]
     }
+  },
+  components: {
+    CardAction
   }
 }
 </script>

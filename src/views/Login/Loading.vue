@@ -33,8 +33,8 @@ export default {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-/*  background-image: url("./assets/logo.png");
-  background-size: contain;*/
+  background-image: url("../../assets/imgs/splash.png");
+  background-size: contain;
 }
 
 .app-offset {

@@ -22,7 +22,8 @@ export default {
   methods: {
     async getUserInfo () {
       let data = await checkLogin()
-      this.$store.commit('update_userInfo', data)
+      console.log(data)
+      // this.$store.commit('update_userInfo', data.userInfo)
     }
   }
 }
@@ -64,7 +65,7 @@ html, body, #app {
   text-align: center;
   color: #2c3e50;
 	/*  margin-top: 60px;*/
-	background: url("./assets/splash.png");
-	background-size: contain;
+	// background: url("./assets/imgs/splash.png");
+	// background-size: contain;
 }
 </style>
