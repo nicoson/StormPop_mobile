@@ -96,7 +96,6 @@ export default {
         name: '劲爽饮料',
         options: [...'abc'],
         url: '../../assets/imgs/Jumbotron.jpg'
-
       }, {
         name: '火爆小食',
         options: [...'abc'],

@@ -9,11 +9,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/testapi', function(req, res, next) {
-  // res.send({
-  //     userinfo: info_get.userInfo(),
-  //     prodinfo: info_get.prodInfo()
-  // });
-	res.send(info_get.userInfo());
+  res.send({
+      userInfo: info_get.userInfo(),
+      prodInfo: info_get.prodInfo()
+  });
+	// res.send(info_get.userInfo());
 });
 
 module.exports = router;

@@ -22,8 +22,8 @@ export default {
   methods: {
     async getUserInfo () {
       let data = await checkLogin()
-      console.log(data)
-      // this.$store.commit('update_userInfo', data.userInfo)
+      this.$store.commit('update_userInfo', data.userInfo)
+      this.$store.commit('update_prodInfo', data.prodInfo)
     }
   }
 }
