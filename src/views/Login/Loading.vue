@@ -15,11 +15,11 @@ export default {
     }
   },
   created () {
-    // setTimeout(
-    //   () => { console.log(this.name) ? this.$router.push('/shop') : this.$router.push('/shop') }, 2000
-    // )
+    setTimeout(() => { this.$router.push('/shop') }, 2000)
 
-    window.onload = () => this.$router.push('/shop')
+    // mobile doesn't respond for onload event, so deprecated for now
+    // window.onload = () => this.$router.push('/shop')
+    // document.body.onload = () => this.$router.push('/shop')
   }
 }
 </script>
@@ -33,8 +33,10 @@ export default {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  background-image: url("../../assets/imgs/splash.png");
+  background-image: url("/static/imgs/splash.png");
   background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .app-offset {

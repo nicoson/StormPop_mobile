@@ -2,16 +2,16 @@
   {
     "name": "旋风爆米花",
     "options": ["a", "b", "c"],
-    "url": "../../assets/imgs/Jumbotron.jpg"
+    "url": "/static/imgs/popcorn.jpg"
   },
   {
     "name": "劲爽饮料",
     "options": ["a", "b", "c"],
-    "url": "../../assets/imgs/Jumbotron.jpg"
+    "url": "/static/imgs/popcorn.jpg"
   },
   {
     "name": "火爆小食",
     "options": ["a", "b", "c"],
-    "url": "../../assets/imgs/Jumbotron.jpg"
+    "url": "/static/imgs/popcorn.jpg"
   }
 ]

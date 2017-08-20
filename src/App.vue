@@ -48,7 +48,7 @@ html, body, #app {
   font-family: 'Microsoft Yahei' !important
 }
 
-@media screen and (min-width: 769px) {
+/*@media screen and (min-width: 769px) {
   body{
     box-shadow: 0 0 30px gray;
     margin:0 auto;
@@ -58,7 +58,7 @@ html, body, #app {
     width:440px
   }
 }
-
+*/
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

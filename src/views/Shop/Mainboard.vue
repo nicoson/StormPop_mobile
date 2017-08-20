@@ -62,17 +62,20 @@
       <!-- AD slot -->
       <md-card md-with-hover>
         <md-card-media>
-          <img src="../../assets/imgs/Jumbotron.jpg" alt="Jumbotron">
+          <img src="/static/imgs/Jumbotron.jpg" alt="Jumbotron">
         </md-card-media>
       </md-card>
       
       <!-- Products list -->
-      <CardAction v-for="{prod, index} in prods" :cardinfo="prod" :key="index"></CardAction>
+      <CardAction v-for="(prod, index) in prodInfo" :cardinfo="prod" :key="index"></CardAction>
 
     </main>
 
     <md-bottom-bar>
-      <md-bottom-bar-item md-icon="account_box" @click="$refs.sidebar.toggle()">Login</md-bottom-bar-item>
+      <md-button class="md-fab md-primary md-fab-bottom-left" @click="$refs.sidebar.toggle()">
+        <md-icon>account_box</md-icon>
+      </md-button>
+      <div style="flex:1"></div>
       <md-bottom-bar-item md-icon="favorite" md-active>Favorites</md-bottom-bar-item>
       <md-bottom-bar-item md-icon="near_me">Nearby</md-bottom-bar-item>
     </md-bottom-bar>
@@ -81,27 +84,22 @@
 
 <script>
 import CardAction from '@/components/Card_Action'
+import {mapGetters} from 'vuex'
+
 export default {
   name: 'Mainboard',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
       username: 'John Doe',
-      useraccount: 'johndoe@email.com',
-      prods: [{
-        name: '旋风爆米花',
-        options: [...'abc'],
-        url: '../../assets/imgs/Jumbotron.jpg'
-      }, {
-        name: '劲爽饮料',
-        options: [...'abc'],
-        url: '../../assets/imgs/Jumbotron.jpg'
-      }, {
-        name: '火爆小食',
-        options: [...'abc'],
-        url: '../../assets/imgs/Jumbotron.jpg'
-      }]
+      useraccount: 'johndoe@email.com'
     }
+  },
+  computed: {
+    ...mapGetters(['prodInfo'])
+  },
+  created () {
+    // console.log(this.prodInfo)
   },
   components: {
     CardAction
@@ -160,5 +158,7 @@ html, body, .app-viewport {
 
 .md-bottom-bar {
   height: 70px;
+  position: 0;
+  bottom: 0;
 }
 </style>
