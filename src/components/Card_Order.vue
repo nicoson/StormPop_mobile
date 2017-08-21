@@ -1,5 +1,5 @@
 <template>
-  <div class="app-prod-card">
+  <div class="app-prod-card" @click="openDialog('order_detail')">
     <md-card md-with-hover class="app-prod-card">
       <md-card-header>
         <md-card-media>
@@ -16,11 +16,12 @@
           </md-input-container> -->
         </md-card-header-text>
       </md-card-header>
-
-      <md-card-actions>
-        <md-button class="md-raised md-primary">来一份</md-button>
-      </md-card-actions>
     </md-card>
+
+    <md-dialog ref="order_detail">
+      <md-dialog-title>{{orderinfo.orderID}}</md-dialog-title>
+      <md-dialog-content>{{orderinfo.orderID}}</md-dialog-content>
+    </md-dialog>
   </div>
 </template>
 
@@ -35,6 +36,9 @@ export default {
   },
   props: ['orderinfo'],
   methods: {
+    openDialog (ref) {
+      this.$refs[ref].open()
+    }
   }
 }
 </script>
