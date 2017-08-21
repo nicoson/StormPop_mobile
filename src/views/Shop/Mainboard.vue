@@ -23,8 +23,8 @@
     
           <md-list-item>
             <div class="md-list-text-container">
-              <span>{{username}}</span>
-              <span>{{useraccount}}</span>
+              <span>{{userInfo.username}}</span>
+              <span>{{userInfo.useraccount}}</span>
             </div>
     
             <md-button class="md-icon-button md-list-action">
@@ -58,62 +58,60 @@
     </md-sidenav>
     
     <!-- Main board -->
-    <main class="main-content">
-      <!-- AD slot -->
-      <md-card md-with-hover>
-        <md-card-media>
-          <img src="/static/imgs/Jumbotron.jpg" alt="Jumbotron">
-        </md-card-media>
-      </md-card>
-      
-      <!-- Products list -->
-      <CardAction v-for="(prod, index) in prodInfo" :cardinfo="prod" :key="index"></CardAction>
+    <div class="app-container">
+      <router-view></router-view>
+    </div>
 
-    </main>
-
-    <md-bottom-bar>
+    <!-- Bottom Bar -->
+    <md-bottom-bar md-shift @change="pagerouter">
       <md-button class="md-fab md-primary md-fab-bottom-left" @click="$refs.sidebar.toggle()">
         <md-icon>account_box</md-icon>
       </md-button>
       <div style="flex:1"></div>
-      <md-bottom-bar-item md-icon="favorite" md-active>Favorites</md-bottom-bar-item>
-      <md-bottom-bar-item md-icon="near_me">Nearby</md-bottom-bar-item>
+      <md-bottom-bar-item md-icon="favorite" md-active>逛逛</md-bottom-bar-item>
+      <md-bottom-bar-item md-icon="shopping_cart">结帐</md-bottom-bar-item>
+      <md-bottom-bar-item md-icon="confirmation_number">订单</md-bottom-bar-item>
     </md-bottom-bar>
   </div>
 </template>
 
 <script>
-import CardAction from '@/components/Card_Action'
 import {mapGetters} from 'vuex'
 
 export default {
   name: 'Mainboard',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      username: 'John Doe',
-      useraccount: 'johndoe@email.com'
+      msg: 'Welcome to Your Vue.js App'
     }
   },
   computed: {
-    ...mapGetters(['prodInfo'])
+    ...mapGetters(['userInfo'])
   },
-  created () {
-    // console.log(this.prodInfo)
-  },
-  components: {
-    CardAction
+  methods: {
+    pagerouter (e) {
+      switch (e) {
+        case 1:
+          this.$router.push('/home/shopping'); break
+        case 2:
+          this.$router.push('/home/shoppingcart'); break
+        case 3:
+          this.$router.push('/home/myorders'); break
+        default: break
+      }
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
-html, body, .app-viewport {
+.app-viewport {
   height: 100%;
   overflow: hidden;
   display: flex;
   flex-flow: column;
+  justify-content: space-start;
 }
 
 .main-toolbar {
@@ -124,16 +122,6 @@ html, body, .app-viewport {
 .md-title {
   padding-left: 8px;
   color: #fff;
-}
-
-.main-content {
-  position: relative;
-  z-index: 1;
-  overflow: auto;
-
-  .app-prod-card {
-    margin: 15px;
-  }
 }
 
 .md-list-action .md-icon {
@@ -156,9 +144,14 @@ html, body, .app-viewport {
   background: none !important;
 }
 
+.app-container {
+  flex-grow: 1;
+  overflow: scroll;
+}
+
 .md-bottom-bar {
-  height: 70px;
-  position: 0;
-  bottom: 0;
+  height: 56px;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 </style>

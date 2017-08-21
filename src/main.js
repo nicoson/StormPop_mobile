@@ -31,15 +31,17 @@ Vue.use(VueMaterial)
 Vue.material.registerTheme({
   default: {
     primary: 'blue',
-    accent: 'red'
+    accent: 'white'
   },
   green: {
-    primary: 'green',
+    primary: 'teal',
     accent: 'pink'
   },
-  orange: {
-    primary: 'orange',
-    accent: 'green'
+  indigo: {
+    primary: 'indigo',
+    hue: 300,
+    accent: 'green',
+    textColor: '#00bcd4'
   }
 })
 

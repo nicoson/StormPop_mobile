@@ -1,17 +1,17 @@
 [
   {
     "name": "旋风爆米花",
-    "options": ["a", "b", "c"],
+    "options": ["焦糖味", "奶油味", "健康原味"],
     "url": "/static/imgs/popcorn.jpg"
   },
   {
     "name": "劲爽饮料",
-    "options": ["a", "b", "c"],
+    "options": ["冰爽橙饮", "冰封蓝莓", "爽滑芒果"],
     "url": "/static/imgs/popcorn.jpg"
   },
   {
     "name": "火爆小食",
-    "options": ["a", "b", "c"],
+    "options": ["烈火薯片", "孜然薯条", "片片爽"],
     "url": "/static/imgs/popcorn.jpg"
   }
 ]

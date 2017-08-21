@@ -15,7 +15,7 @@ export default {
     }
   },
   created () {
-    setTimeout(() => { this.$router.push('/shop') }, 2000)
+    setTimeout(() => { this.$router.push('/home/shopping') }, 2000)
 
     // mobile doesn't respond for onload event, so deprecated for now
     // window.onload = () => this.$router.push('/shop')

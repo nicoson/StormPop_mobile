@@ -1,0 +1,64 @@
+[
+	{
+		"orderID": "12112121212121221",
+		"orderQRcode": "xxxxxxxxxxxxxxxx",
+		"orderTime": "2017/2/20 18:20:15",
+		"orderDetial": [
+			{
+				"prodName": "旋风爆米花",
+				"flavor": "奶油味",
+				"price": 10,
+				"volumn": 2
+			},
+			{
+				"prodName": "劲爽饮料",
+				"flavor": "冰爽橙饮",
+				"price": 10,
+				"volumn": 1
+			},
+			{
+				"prodName": "劲爽饮料",
+				"flavor": "爽滑芒果",
+				"price": 10,
+				"volumn": 1
+			},
+			{
+				"prodName": "火爆小食",
+				"flavor": "孜然薯条",
+				"price": 10,
+				"volumn": 3
+			}
+		]
+	},
+	{
+		"orderID": "232312132244352321",
+		"orderQRcode": "xxxxxxxxxxxxxxxx",
+		"orderTime": "2017/5/20 22:20:15",
+		"orderDetial": [
+			{
+				"prodName": "旋风爆米花",
+				"flavor": "奶油味",
+				"price": 10,
+				"volumn": 1
+			},
+			{
+				"prodName": "劲爽饮料",
+				"flavor": "冰爽橙饮",
+				"price": 12,
+				"volumn": 1
+			},
+			{
+				"prodName": "劲爽饮料",
+				"flavor": "爽滑芒果",
+				"price": 11,
+				"volumn": 2
+			},
+			{
+				"prodName": "火爆小食",
+				"flavor": "孜然薯条",
+				"price": 10,
+				"volumn": 2
+			}
+		]
+	}
+]
