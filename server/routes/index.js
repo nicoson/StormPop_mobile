@@ -8,11 +8,16 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/testapi', function(req, res, next) {
+router.get('/getbasicinfo', function(req, res, next) {
   res.send({
       userInfo: info_get.userInfo(),
       prodInfo: info_get.prodInfo()
   });
+	// res.send(info_get.userInfo());
+});
+
+router.post('/getorderinfo', function(req, res, next) {
+  res.send(info_get.orderInfo(req.body.account));
 	// res.send(info_get.userInfo());
 });
 

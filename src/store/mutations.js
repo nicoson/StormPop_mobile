@@ -18,6 +18,10 @@ export const mutations = {
     state.prodInfo = data
     localStorage.setItem('prodInfo', JSON.stringify(state.prodInfo))
   },
+  update_orderInfo (state, data) {
+    state.orderInfo = data
+    localStorage.setItem('orderInfo', JSON.stringify(state.orderInfo))
+  },
   update_loginStatus (state, data) {
     state.loginStatus = data
     localStorage.setItem('loginStatus', JSON.stringify(state.loginStatus))

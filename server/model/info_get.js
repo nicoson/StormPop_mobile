@@ -12,5 +12,10 @@ info_get.prodInfo = function() {
 	return result;
 }
 
+info_get.orderInfo = function() {
+	var result = JSON.parse(fs.readFileSync('./public/mockdata/orderinfo.json'));
+	return result;
+}
+
 // console.log(userInfo.get())
 module.exports = info_get;
