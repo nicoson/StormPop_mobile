@@ -1,12 +1,12 @@
 <template>
   <md-tabs md-centered>
-    <md-tab md-label="未使用的订单" md-icon="ondemand_video" id="custom">
-      <CardOrder v-for="(order, index) in orderInfo" :orderinfo="order" :key="index"></CardOrder>
+    <md-tab md-label="未使用的订单" md-icon="ondemand_video">
+<!--       您还没有订单，赶紧去"逛逛"下单吧 -->
+      <CardOrder v-for="(order, index) in orderInfo" :orderinfo="order" :valid=true :key="index"></CardOrder>
     </md-tab>
 
     <md-tab md-label="已使用的订单" md-icon="music_note">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas amet cum vitae, omnis! Illum quas voluptatem, expedita iste, dicta ipsum ea veniam dolore in, quod saepe reiciendis nihil.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas amet cum vitae, omnis! Illum quas voluptatem, expedita iste, dicta ipsum ea veniam dolore in, quod saepe reiciendis nihil.</p>
+      <CardOrder v-for="(order, index) in orderInfo" :orderinfo="order" :valid=false :key="index"></CardOrder>
     </md-tab>
   </md-tabs>
 </template>

@@ -3,7 +3,7 @@
 		"orderID": "12112121212121221",
 		"orderQRcode": "xxxxxxxxxxxxxxxx",
 		"orderTime": "2017/2/20 18:20:15",
-		"orderDetial": [
+		"orderDetail": [
 			{
 				"prodName": "旋风爆米花",
 				"flavor": "奶油味",
@@ -34,7 +34,7 @@
 		"orderID": "232312132244352321",
 		"orderQRcode": "xxxxxxxxxxxxxxxx",
 		"orderTime": "2017/5/20 22:20:15",
-		"orderDetial": [
+		"orderDetail": [
 			{
 				"prodName": "旋风爆米花",
 				"flavor": "奶油味",

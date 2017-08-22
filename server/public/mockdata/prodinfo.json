@@ -7,11 +7,11 @@
   {
     "name": "劲爽饮料",
     "options": ["冰爽橙饮", "冰封蓝莓", "爽滑芒果"],
-    "url": "/static/imgs/popcorn.jpg"
+    "url": "/static/imgs/drink.jpg"
   },
   {
     "name": "火爆小食",
     "options": ["烈火薯片", "孜然薯条", "片片爽"],
-    "url": "/static/imgs/popcorn.jpg"
+    "url": "/static/imgs/food.jpg"
   }
 ]
