@@ -63,7 +63,7 @@ export default {
 
   .app-shoppingcart-confirmorder {
     width: 80%;
-    margin-bottom: 20pt;
+    margin: 20pt 0;
   }
 
   .app-shoppingcart-noorder {

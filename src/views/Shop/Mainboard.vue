@@ -54,6 +54,10 @@
         <md-list-item @click="$refs.sidebar.toggle()">
           <md-icon>sms</md-icon> <span>Message</span>
         </md-list-item>
+    
+        <md-list-item @click="logout">
+          <md-icon>sms</md-icon> <span>Logout</span>
+        </md-list-item>
       </md-list>
     </md-sidenav>
     
@@ -63,7 +67,7 @@
     </div>
 
     <!-- Bottom Bar -->
-    <md-bottom-bar md-shift @change="pagerouter">
+    <md-bottom-bar @change="pagerouter">
       <md-button class="md-fab md-primary md-fab-bottom-left" @click="$refs.sidebar.toggle()">
         <md-icon>account_box</md-icon>
       </md-button>
@@ -99,6 +103,9 @@ export default {
           this.$router.push('/home/myorders'); break
         default: break
       }
+    },
+    logout () {
+      this.$router.push('/login')
     }
   }
 }
@@ -153,5 +160,7 @@ export default {
   height: 56px;
   flex-grow: 0;
   flex-shrink: 0;
+  z-index: 1;
+  // background-color: rgba(33,150,243,0.5);
 }
 </style>

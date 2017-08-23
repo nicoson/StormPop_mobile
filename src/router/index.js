@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 //  import page components
-import Loading from '@/views/Login/Loading'
+import Loading from '@/views/Loading/Loading'
+import Login from '@/views/Login/Login'
 import Mainboard from '@/views/Shop/Mainboard'
 import Shopping from '@/views/Shop/Shopping'
 import ShoppingCart from '@/views/Shop/ShoppingCart'
@@ -27,6 +28,11 @@ export default new Router({
         { path: '/home/shoppingcart', name: 'shoppingcart', component: ShoppingCart },
         { path: '/home/myorders', name: 'myorders', component: Myorders }
       ]
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     },
     {
       path: '/template',

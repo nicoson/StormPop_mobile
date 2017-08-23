@@ -1,6 +1,7 @@
 <template>
   <div class="app-prod-card" @click="openDialog('order_detail')">
-    <md-card>
+    <md-card class="has-ripple">
+      <md-ink-ripple />
       <md-card-header>
         <md-card-media>
           <img src="/static/imgs/ordericon.jpg" alt="People">

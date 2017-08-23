@@ -8,6 +8,8 @@ export default {
   tabs: [{
     name: 'Loading'
   }, {
+    name: 'Login'
+  }, {
     name: 'Mainboard'
   }, {
     name: 'shopping'
