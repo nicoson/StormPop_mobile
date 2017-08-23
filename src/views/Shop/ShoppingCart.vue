@@ -10,29 +10,44 @@
       </md-card>
       
       <!-- Products list -->
-      <CardPay v-for="(prod, index) in prodInfo" :cardinfo="prod" :key="index"></CardPay>
+      <CardPay v-for="(order, index) in orderList" :order="order" :key="index"></CardPay>
+
+      <!-- Submit Order -->
+      <md-button v-if="orderList?(orderList.length > 0):false" class="md-raised md-primary app-shoppingcart-confirmorder" @click="submitOrder">确认下单</md-button>
+      <p v-else class="app-shoppingcart-noorder">您还没有订单，赶紧去"逛逛"下单吧</p>
     </main>
 </template>
 
 <script>
 import CardPay from '@/components/Card_Pay'
-import {mapGetters} from 'vuex'
+// import {mapGetters} from 'vuex'
 
 export default {
   name: 'ShoppingCart',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      orderList: []
     }
   },
   computed: {
-    ...mapGetters(['prodInfo'])
+    // ...mapGetters(['prodInfo'])
   },
   created () {
     // console.log(this.prodInfo)
   },
+  mounted () {
+    this.orderList = JSON.parse(localStorage.cart ? localStorage.cart : null)
+  },
   components: {
     CardPay
+  },
+  methods: {
+    submitOrder () {
+      //  post
+      localStorage.removeItem('cart')
+      this.orderList = []
+    }
   }
 }
 </script>
@@ -44,6 +59,16 @@ export default {
     font-size: 15pt;
     background: #2196f3;
     color: white;
+  }
+
+  .app-shoppingcart-confirmorder {
+    width: 80%;
+    margin-bottom: 20pt;
+  }
+
+  .app-shoppingcart-noorder {
+    color: #aaa;
+    margin: 50pt 0;
   }
 
   .main-content {

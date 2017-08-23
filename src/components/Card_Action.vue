@@ -9,8 +9,8 @@
         <md-card-header-text>
           <div class="md-title">{{cardinfo.name}}</div>
           <md-input-container>
-            <label for="favor">口味</label>
-            <md-select name="favor" id="favor" v-model="favor">
+            <label for="flavor">口味</label>
+            <md-select name="flavor" id="flavor" v-model="flavor">
               <md-option v-for="(option, index) in cardinfo.options" :key="index" :value="option">{{option}}</md-option>
             </md-select>
           </md-input-container>
@@ -18,7 +18,7 @@
       </md-card-header>
 
       <md-card-actions>
-        <md-button class="md-raised md-primary" @click="add">来一份</md-button>
+        <md-button class="md-raised md-primary" @click="addCart">来一份</md-button>
       </md-card-actions>
     </md-card>
   </div>
@@ -30,18 +30,28 @@ export default {
   data () {
     return {
       volumn: 0,
-      favor: null
+      flavor: null
     }
   },
   props: ['cardinfo'],
   methods: {
-    add () {
-      this.volumn += 1
-    },
-    reduce () {
-      if (this.volumn > 0) {
-        this.volumn -= 1
+    addCart () {
+      if (!this.flavor) return
+      let cart
+      if (localStorage.cart) {
+        cart = JSON.parse(localStorage.cart)
+        let ind = cart.findIndex(item => (item.prodName === this.cardinfo.name && item.flavor === this.flavor))
+        if (ind > -1) {
+          cart[ind].volumn += 1
+        } else {
+          cart.push({url: this.cardinfo.url, prodName: this.cardinfo.name, flavor: this.flavor, volumn: 1})
+        }
+      } else {
+        cart = []
+        cart.push({url: this.cardinfo.url, prodName: this.cardinfo.name, flavor: this.flavor, volumn: 1})
       }
+
+      localStorage.cart = JSON.stringify(cart)
     }
   }
 }

@@ -1,7 +1,11 @@
 <template>
   <md-tabs md-centered>
-    <md-tab md-label="未使用的订单" md-icon="ondemand_video">
+    <md-tab md-label="可用的订单" md-icon="ondemand_video">
 <!--       您还没有订单，赶紧去"逛逛"下单吧 -->
+      <CardOrder v-for="(order, index) in orderInfo" :orderinfo="order" :valid=true :key="index"></CardOrder>
+    </md-tab>
+
+    <md-tab md-label="未支付的订单" md-icon="ondemand_video">
       <CardOrder v-for="(order, index) in orderInfo" :orderinfo="order" :valid=true :key="index"></CardOrder>
     </md-tab>
 

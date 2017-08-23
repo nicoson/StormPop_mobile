@@ -23,9 +23,9 @@ export default new Router({
       name: 'Mainboard',
       component: Mainboard,
       children: [
-        { path: '/home/shopping', component: Shopping },
-        { path: '/home/shoppingcart', component: ShoppingCart },
-        { path: '/home/myorders', component: Myorders }
+        { path: '/home/shopping', name: 'shopping', component: Shopping },
+        { path: '/home/shoppingcart', name: 'shoppingcart', component: ShoppingCart },
+        { path: '/home/myorders', name: 'myorders', component: Myorders }
       ]
     },
     {
