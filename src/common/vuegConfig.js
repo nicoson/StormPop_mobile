@@ -10,6 +10,8 @@ export default {
   }, {
     name: 'Login'
   }, {
+    name: 'Register'
+  }, {
     name: 'Mainboard'
   }, {
     name: 'shopping'

@@ -4,6 +4,7 @@ import Router from 'vue-router'
 //  import page components
 import Loading from '@/views/Loading/Loading'
 import Login from '@/views/Login/Login'
+import Register from '@/views/Login/Register'
 import Mainboard from '@/views/Shop/Mainboard'
 import Shopping from '@/views/Shop/Shopping'
 import ShoppingCart from '@/views/Shop/ShoppingCart'
@@ -33,6 +34,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
     },
     {
       path: '/template',

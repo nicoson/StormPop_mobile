@@ -7,7 +7,7 @@
       </div>
       <form>
         <md-input-container>
-          <label>用户名/邮箱</label>
+          <label>用户名/登陆名</label>
           <md-input type="text" required></md-input>
         </md-input-container>
 
@@ -16,17 +16,33 @@
           <md-input type="password" required></md-input>
         </md-input-container>
 
-        <md-button class="md-raised md-primary app-login-submitbtn" @click="submit">登陆</md-button>
+        <md-input-container>
+          <label>密码确认</label>
+          <md-input type="password" required></md-input>
+        </md-input-container>
+
+        <md-input-container>
+          <label>注册邮箱</label>
+          <md-input type="mail" required></md-input>
+        </md-input-container>
+
+        <md-input-container>
+          <label>生日</label>
+          <md-input type="date"></md-input>
+        </md-input-container>
+
+        <div>
+          <span>性别： </span>
+          <md-radio v-model="gender" name="app-register-gender" md-value="1" class="md-primary">
+            <i class="fa fa-mars" aria-hidden="true">&nbsp;男</i>
+          </md-radio>
+          <md-radio v-model="gender" name="app-register-gender" md-value="2" class="md-primary">
+            <i class="fa fa-venus" aria-hidden="true">&nbsp;女</i>
+          </md-radio>
+        </div>
+
+        <md-button class="md-raised md-primary app-login-submitbtn" @click="submit">注册</md-button>
       </form>
-
-      <div class="app-login-helper">
-        <a href="">忘记密码?</a>
-        <router-link to="/register">新用户注册</router-link>
-      </div>
-    </div>
-
-    <div class="app-login-condition">
-      <p>登录即代表已阅读并同意<a href="">服务条款</a></p>
     </div>
   </div>
 </template>
@@ -36,15 +52,12 @@ export default {
   name: 'Loading',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: '',
+      gender: 1
     }
   },
   created () {
     // setTimeout(() => { this.$router.push('/home/shopping') }, 2000)
-
-    // mobile doesn't respond for onload event, so deprecated for now
-    // window.onload = () => this.$router.push('/shop')
-    // document.body.onload = () => this.$router.push('/shop')
   },
   methods: {
     submit () {

@@ -14,6 +14,7 @@ import '../node_modules/vue-material/dist/vue-material.css'
 import vueg from 'vueg'
 import vuegOption from '@/common/vuegConfig'
 import 'vueg/css/transition-min.css'
+import 'font-awesome/css/font-awesome.min.css'
 
 Vue.config.productionTip = false
 
