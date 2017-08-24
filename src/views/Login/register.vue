@@ -31,12 +31,12 @@
           <md-input type="date"></md-input>
         </md-input-container>
 
-        <div>
+        <div id="app_register_gender">
           <span>性别： </span>
           <md-radio v-model="gender" name="app-register-gender" md-value="1" class="md-primary">
             <i class="fa fa-mars" aria-hidden="true">&nbsp;男</i>
           </md-radio>
-          <md-radio v-model="gender" name="app-register-gender" md-value="2" class="md-primary">
+          <md-radio v-model="gender" name="app-register-gender" md-value="0" class="md-primary">
             <i class="fa fa-venus" aria-hidden="true">&nbsp;女</i>
           </md-radio>
         </div>
@@ -68,7 +68,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
   #app_loginPage {
     height: 100%;
     padding: 3rem;
@@ -83,10 +83,25 @@ export default {
     font-size: 1.3rem;
     color: #36b39b;
     margin: 1.5rem 0;
+    img {
+      width: 20%;
+    }
   }
 
-  .app-login-title img {
-    width: 20%;
+  #app_register_gender {
+    i {
+      font-weight: 700;
+    }
+
+    .fa-mars {
+      text-shadow: 0 0 0.5rem #2196f3;
+      color: #2196f3;
+    }
+
+    .fa-venus {
+      text-shadow: 0 0 0.5rem #ea1953;
+      color: #ea1953;
+    }
   }
 
   .app-login-submitbtn {

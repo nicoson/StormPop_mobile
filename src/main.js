@@ -32,7 +32,7 @@ Vue.use(VueMaterial)
 Vue.material.registerTheme({
   default: {
     primary: 'blue',
-    accent: 'white'
+    accent: 'red'
   },
   green: {
     primary: 'teal',

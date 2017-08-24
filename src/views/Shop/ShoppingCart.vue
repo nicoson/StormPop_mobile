@@ -47,6 +47,7 @@ export default {
       //  post
       localStorage.removeItem('cart')
       this.orderList = []
+      this.$store.commit('update_cartNum')
     }
   }
 }

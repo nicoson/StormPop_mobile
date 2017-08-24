@@ -55,7 +55,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
   #app_loginPage {
     height: 100%;
     padding: 3rem;
@@ -70,10 +70,10 @@ export default {
     font-size: 1.3rem;
     color: #36b39b;
     margin: 1.5rem 0;
-  }
 
-  .app-login-title img {
-    width: 20%;
+    img {
+      width: 20%;
+    }
   }
 
   .app-login-submitbtn {

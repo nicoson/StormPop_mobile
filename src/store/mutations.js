@@ -5,7 +5,8 @@ export const state = {
   'loginStatus': JSON.parse(localStorage.getItem('loginStatus') || '{}'), // 用户登录状态
   'userInfo': JSON.parse(localStorage.getItem('userInfo') || '{}'), // 用户登录信息
   'prodInfo': JSON.parse(localStorage.getItem('prodInfo') || '{}'), // 用户登录信息
-  'accounts': JSON.parse(localStorage.getItem('accounts') || '[]') // 登陆过的用户
+  'accounts': JSON.parse(localStorage.getItem('accounts') || '[]'), // 登陆过的用户
+  'cartNum': JSON.parse(localStorage.getItem('cartNum') || 0) // 登陆过的用户
 }
 
 // mutations
@@ -25,6 +26,10 @@ export const mutations = {
   update_loginStatus (state, data) {
     state.loginStatus = data
     localStorage.setItem('loginStatus', JSON.stringify(state.loginStatus))
+  },
+  update_cartNum (state) {
+    state.cartNum = JSON.parse(localStorage.getItem('cart') || '[]').length
+    localStorage.setItem('cartNum', state.cartNum)
   }
 }
 

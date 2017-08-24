@@ -4,6 +4,7 @@ export const userInfo = state => state.userInfo
 export const prodInfo = state => state.prodInfo
 export const orderInfo = state => state.orderInfo
 export const accounts = state => state.accounts
+export const cartNum = state => state.cartNum
 export const allMessage = state => state.message.allMessage
 export const hasGetFriendList = state => state.friend.hasGetFriendList
 export const friendList = state => state.friend.friendList

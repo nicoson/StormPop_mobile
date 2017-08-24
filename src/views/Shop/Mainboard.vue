@@ -73,7 +73,10 @@
       </md-button>
       <div style="flex:1"></div>
       <md-bottom-bar-item md-icon="favorite" md-active>逛逛</md-bottom-bar-item>
-      <md-bottom-bar-item md-icon="shopping_cart">结帐</md-bottom-bar-item>
+      <md-bottom-bar-item md-icon="shopping_cart">
+        <span v-if="cartNum>0" class="app-mainboard-bottombar-badge">{{cartNum}}</span>
+        结帐
+      </md-bottom-bar-item>
       <md-bottom-bar-item md-icon="confirmation_number">订单</md-bottom-bar-item>
     </md-bottom-bar>
   </div>
@@ -90,7 +93,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['userInfo'])
+    ...mapGetters(['userInfo', 'cartNum'])
   },
   methods: {
     pagerouter (e) {
@@ -119,6 +122,7 @@ export default {
   display: flex;
   flex-flow: column;
   justify-content: space-start;
+  background-color: #f8f8f8;
 }
 
 .main-toolbar {
@@ -162,5 +166,18 @@ export default {
   flex-shrink: 0;
   z-index: 1;
   // background-color: rgba(33,150,243,0.5);
+
+  .app-mainboard-bottombar-badge {
+    position: absolute;
+    left: 1rem;
+    top: -2rem;
+    border-radius: 50%;
+    background: rgb(241, 56, 56);
+    width: 1rem;
+    height: 1rem;
+    color: white;
+    font-size: 0.6rem;
+    vertical-align: middle;
+  }
 }
 </style>

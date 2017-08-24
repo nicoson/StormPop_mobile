@@ -52,6 +52,7 @@ export default {
       }
 
       localStorage.cart = JSON.stringify(cart)
+      this.$store.commit('update_cartNum')
     }
   }
 }
