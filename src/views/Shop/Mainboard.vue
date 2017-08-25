@@ -27,9 +27,9 @@
               <span>{{userInfo.useraccount}}</span>
             </div>
     
-            <md-button class="md-icon-button md-list-action">
+<!--             <md-button class="md-icon-button md-list-action">
               <md-icon>arrow_drop_down</md-icon>
-            </md-button>
+            </md-button> -->
           </md-list-item>
         </md-list>
       </md-toolbar>
@@ -74,7 +74,7 @@
       <div style="flex:1"></div>
       <md-bottom-bar-item md-icon="favorite" md-active>逛逛</md-bottom-bar-item>
       <md-bottom-bar-item md-icon="shopping_cart">
-        <span v-if="cartNum>0" class="app-mainboard-bottombar-badge">{{cartNum}}</span>
+        <p v-if="cartNum>0" class="app-mainboard-bottombar-badge">{{cartNum}}</p>
         结帐
       </md-bottom-bar-item>
       <md-bottom-bar-item md-icon="confirmation_number">订单</md-bottom-bar-item>
@@ -178,6 +178,9 @@ export default {
     color: white;
     font-size: 0.6rem;
     vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>
